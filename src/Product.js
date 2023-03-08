@@ -1,6 +1,6 @@
 class Product {
-    constructor({ title, description, price, thumbnail, code, stock }) {
-      this.id = this.#generateId();
+    constructor({id, title, description, price, thumbnail, code, stock }) {
+      this.id = id
       this.title = title;
       this.description = description;
       this.price = price;
@@ -8,10 +8,6 @@ class Product {
       this.code = code;
       this.stock = stock;
     }
-    #generateId() {
-      const min = 1000000000;
-      const max = 9999999999;
-      return Math.floor(Math.random() * (max - min) + min).toString();
-    }
+    
   }
-module.export = Product
+export default Product

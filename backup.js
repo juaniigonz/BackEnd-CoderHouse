@@ -116,24 +116,24 @@
 //   console.log('Productos restantes:', remainingProducts);
 
 
-const fs = require("fs")
+// const fs = require("fs")
 
-const date = new Date().toDateString()
+// const date = new Date().toDateString()
 
-fs.writeFile("archivo.txt", date, (err)=>{
-  if(err) console.log(err)
+// fs.writeFile("archivo.txt", date, (err)=>{
+//   if(err) console.log(err)
 
-})
+// })
 
-fs.readFile("archivo.txt", "utf-8",(err,str)=>{
-  if(err) console.log(err);
-  return console.log(str);})
+// fs.readFile("archivo.txt", "utf-8",(err,str)=>{
+//   if(err) console.log(err);
+//   return console.log(str);})
 
-  fs.unlink("archivo.txt", (err)=>{
-    if(err) console.log(err);
-    else console.log("eliminado");
+//   fs.unlink("archivo.txt", (err)=>{
+//     if(err) console.log(err);
+//     else console.log("eliminado");
     
-  })
+//   })
 
 
 

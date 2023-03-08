@@ -1,74 +1,74 @@
 
 
-class ProductManager {
-  #products;
-  constructor() {
-    this.#products =[]
-  }
+// class ProductManager {
+//   #products;
+//   constructor() {
+//     this.#products =[]
+//   }
 
 
-  // getProducts() {
-  //   return this.#products;
-  // }
+//   // getProducts() {
+//   //   return this.#products;
+//   // }
 
-  // getProductById(id) {
-  //   const product = this.#products.find((product) => product.id === id);
+//   // getProductById(id) {
+//   //   const product = this.#products.find((product) => product.id === id);
 
-  //   return this.#products.find(product);
-  // }
+//   //   return this.#products.find(product);
+//   // }
 
-  addProduct(product) {
-    if (this.#products.find((p) => p.code === product.code)) {
-      throw new Error("El código ya está en uso");
-    } 
+//   addProduct(product) {
+//     if (this.#products.find((p) => p.code === product.code)) {
+//       throw new Error("El código ya está en uso");
+//     } 
 
-    const newProduct = new Product(product)
+//     const newProduct = new Product(product)
 
-    this.#products.push(newProduct);
+//     this.#products.push(newProduct);
 
-    return newProduct;
-  }
+//     return newProduct;
+//   }
 
-  updateProduct(id, updateFields) {
-    const index = this.#products.findIndex((product) => product.id === id);
+//   updateProduct(id, updateFields) {
+//     const index = this.#products.findIndex((product) => product.id === id);
 
-    if (index === -1) {
-      throw new Error("Producto no encontrado");
-    }
+//     if (index === -1) {
+//       throw new Error("Producto no encontrado");
+//     }
 
-    const updatedProduct = {
-      ...this.#products[index], 
-      ...updateFields,
-      id,
-    };
+//     const updatedProduct = {
+//       ...this.#products[index], 
+//       ...updateFields,
+//       id,
+//     };
 
-    this.#products[index] = updatedProduct;
+//     this.#products[index] = updatedProduct;
 
-    return updatedProduct;
-  }
+//     return updatedProduct;
+//   }
 
-  deleteProduct(id) {
-    const index = this.#products.findIndex((product) => product.id === id);
+//   deleteProduct(id) {
+//     const index = this.#products.findIndex((product) => product.id === id);
 
-    if (index === -1) {
-      throw new Error("Producto no encontrado");
-    }
+//     if (index === -1) {
+//       throw new Error("Producto no encontrado");
+//     }
 
-    this.#products.splice(index, 1);
-  }
-}
+//     this.#products.splice(index, 1);
+//   }
+// }
 
-const productManager = new ProductManager();
+// const productManager = new ProductManager();
 
-// Agregar un producto
-const newProduct = {
-  title: "producto prueba",
-  description: "Este es un producto prueba",
-  price: 200,
-  thumbnail: "Sin imagen",
-  code: "abc123",
-  stock: 25,
-};
+// // Agregar un producto
+// const newProduct = {
+//   title: "producto prueba",
+//   description: "Este es un producto prueba",
+//   price: 200,
+//   thumbnail: "Sin imagen",
+//   code: "abc123",
+//   stock: 25,
+// };
 // const addedProduct = productManager.addProduct(newProduct);
 // console.log("Producto agregado:", addedProduct);
 

@@ -1,6 +1,6 @@
-const Product = require("./Product");
-const FileManager = require("./FileManager.js");
-const errorMsg = require("./ErrorMsg");
+import Product from "./Product.js"
+import FileManager from "./FileManager.js";
+import errorMessage from "./ErrorMsg.js";
 
  class ProductManager {
     #products;
@@ -39,7 +39,7 @@ const errorMsg = require("./ErrorMsg");
         const productsIndex = this.#products.findIndex((product) => product.id === id);
 
         if (productsIndex !== -1) {
-            throw new Error(errorMsg.NOT_FOUND);
+            throw new Error(errorMessage.NOT_FOUND);
         }
 
         const updateProduct = {...this.#products[productsIndex], ...product};
@@ -59,4 +59,6 @@ const errorMsg = require("./ErrorMsg");
     }
 }
 
-module.exports = ProductManager;
+export default ProductManager
+
+
