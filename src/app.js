@@ -1,12 +1,13 @@
 import express from "express";
 import ProductManager from "./ProductManager.js";
+import errorMessage from "./ErrorMsg.js";
 
 const app = express();
 const productManager = new ProductManager('src/data.json');
 const PORT = 8080;
 
 app.listen(PORT,()=>{
-  console.log("puerto 8080");
+  // console.log("puerto 8080");
 })
 
 app.get("/productos", async (req, res) => {
@@ -14,7 +15,7 @@ app.get("/productos", async (req, res) => {
     const products = await productManager.getProducts();
     res.json(products);
   } catch {
-    res.json({ mensaje: error.message });
+    res.json({ mensaje: errorMessage });
   }
 });
 
@@ -24,9 +25,9 @@ app.get("/productos/:id", async (req, res) => {
     const product = await productManager.getById(idProd);
     res.json(product);
   } catch {
-    res.json({ mensaje: error.message });
+    res.json({ mensaje: errorMessage});
   }
-
+  
 });
 app.get("/productos", async (req, res) => {
   try {
@@ -34,6 +35,6 @@ app.get("/productos", async (req, res) => {
     const products = await productManager.getProducts();
     res.json(products);
   } catch {
-    res.json({ mensaje: error.message });
+    res.json({ mensaje: errorMessage });
   }
 });

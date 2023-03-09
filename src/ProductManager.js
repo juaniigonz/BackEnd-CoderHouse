@@ -32,7 +32,7 @@ import errorMessage from "./ErrorMsg.js";
     }
 
     getById(id) {
-        this.#products.find((product) => product.id === id);
+        return this.#products.find((product) => product.id === id);
     }
 
     async updateProduct(id, product) {
